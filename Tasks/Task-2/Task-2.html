@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="text">
+            <h1>Calculator</h1>
+        </div>
+        <div class="display">
+            <input type="text"  name="display" id="display">
+        </div>
+        <div class="box-1">
+            <button id="seven" onclick="handleevent()">7</button>
+            <button id="eight" onclick="handleevent()">8</button>
+            <button onclick="handleevent()">9</button>
+            <button onclick="handleevent()" class="symbol">/</button>
+        </div><br>
+        <div class="box-2">
+            <button onclick="handleevent()">4</button>
+            <button onclick="handleevent()">5</button>
+            <button onclick="handleevent()">6</button>
+            <button onclick="handleevent()" class="symbol">*</button>
+        </div><br>
+        <div class="box-3">
+            <button onclick="handleevent()">1</button>
+            <button onclick="handleevent()">2</button>
+            <button onclick="handleevent()">3</button>
+            <button onclick="handleevent()" class="symbol">-</button>
+        </div><br>
+        <div class="box-4">
+            <button onclick="handleevent()">0</button>
+            <button onclick="handleevent()">.</button>
+            <button onclick="handleevent()" class="symbol">=</button>
+            <button onclick="handleevent()" id="pluse" class="symbol">+</button>
+        </div><br>
+        <div class="box-5"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
