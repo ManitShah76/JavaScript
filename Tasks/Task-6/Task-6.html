@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-6</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="">
+        <label for="UserName">UserName:</label>
+        <input type="text" name="uname" id="uname" onblur="validate(this, 'showdata')"> 
+        <div id="showdata" class="div"></div> <br>
+        <label for="Email">Email:</label>
+        <input type="email" name="email" id="email" onblur="validate(this, 'showdata1')">
+        <div id="showdata1" class="div"></div> <br>
+        <label for="PhoneNo">PhoneNo:</label>
+        <input type="text" name="pno" id="pno" onblur="validate(this, 'showdata2')">
+        <div id="showdata2" class="div"></div> <br>
+        <label for="Password">Password:</label>
+        <input type="password" name="pass" id="pass" onblur="validate(this, 'showdata3')">
+        <div id="showdata3" class="div"></div> <br>
+        <button type="submit" onclick="show()">Submit</button>
+    </form>
+    <div id="display1"></div>
+    <div id="display2"></div>
+    <div id="display3"></div>
+    <div id="display4"></div>
+    <script src="script.js"></script>
+</body>
+</html>
