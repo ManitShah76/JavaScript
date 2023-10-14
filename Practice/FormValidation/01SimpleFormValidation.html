@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Form Validation</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 20px;
+      }
+      body {
+        background-color: tan;
+      }
+      fieldset {
+        width: 800px;
+        height: 400px;
+        margin: 0 auto;
+        background-color: crimson;
+        color: aliceblue;
+      }
+      form {
+        margin: 30px 0px;
+      }
+      div[class*="inp_data"] {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      button {
+        padding: 10px 30px;
+        background-color: teal;
+        color: khaki;
+      }
+      .btn {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <fieldset>
+      <legend>Simple Form Validation</legend>
+      <form action="">
+        <div class="inp_data1">
+          <label for="uname">User Name</label>
+          <input
+            type="text"
+            name="uname"
+            id="uname"
+            onblur="validate(this, 'unameError', 'Name')"
+          />
+          <span id="unameError"></span>
+        </div>
+        <br />
+        <div class="inp_data2">
+          <label for="upass">User Password</label>
+          <input
+            type="password"
+            name="upass"
+            id="upass"
+            onblur="validate(this, 'upassError', 'Password')"
+          />
+          <span id="upassError"></span>
+        </div>
+        <br />
+        <div class="inp_data3">
+          <label for="uemail">User Email</label>
+          <input
+            type="email"
+            name="uemail"
+            id="uemail"
+            onblur="validate(this, 'uemailError', 'Email')"
+          />
+          <span id="uemailError"></span>
+        </div>
+        <br />
+        <div class="inp_data4">
+          <label for="umobile">User Mobile</label>
+          <input
+            type="tel"
+            name="umobile"
+            id="umobile"
+            onblur="validate(this, 'umobileError', 'Mobile Number')"
+          />
+          <span id="umobileError"></span>
+        </div>
+        <br />
+        <div class="btn">
+          <button>Submit</button>
+        </div>
+      </form>
+    </fieldset>
+
+    <hr />
+    <script>
+      function validate(e, spnId, msg) {
+        if (e.value == "") {
+        document.getElementById(spnId).innerText = "Enter Valid " + msg
+            
+        } else {
+        document.getElementById(spnId).innerText = " " 
+            
+        }
+      }
+    </script>
+  </body>
+</html>
