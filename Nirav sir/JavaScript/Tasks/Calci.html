@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task-2</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .calc 
+        {
+            display: grid;
+            background: black;
+            padding: 30px;
+            width: 40%;
+            margin: 80px auto;
+        }
+        input 
+        {
+          grid-column: span 4;
+          font-size: 25px;
+          font-weight: bold;
+          font-family: cursive;
+          border: none;
+          height: 50px;
+          width: 500px;
+        }
+        .symbol 
+        {
+            height: 50px;
+            width: 50px;
+            background: orange;
+            margin: 20px;
+            border: 2px solid;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: cursive;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="calc">
+        <input id="display" />
+
+        <div class="symbol" onclick=" AC()">AC</div>
+        <div class="symbol" onclick="DEL()">DEL</div>
+        <div class="symbol" onclick="getVal('%')">%</div>
+        <div class="symbol" onclick="getVal('/')">/</div>
+
+        <div class="symbol" onclick="getVal('9')">9</div>
+        <div class="symbol" onclick="getVal('8')">8</div>
+        <div class="symbol" onclick="getVal('7')">7</div>
+        <div class="symbol" onclick="getVal('*')">*</div>
+
+        <div class="symbol" onclick="getVal('6')">6</div>
+        <div class="symbol" onclick="getVal('5')">5</div>
+        <div class="symbol" onclick="getVal('4')">4</div>
+        <div class="symbol" onclick="getVal('-')">-</div>
+        <div class="symbol" onclick="getVal('3')">3</div>
+        <div class="symbol" onclick="getVal('2')">2</div>
+        <div class="symbol" onclick="getVal('1')">1</div>
+        <div class="symbol" onclick="getVal('+')">+</div>
+
+
+
+        <div class="symbol" onclick="getVal('0')">0</div>
+        <div class="symbol" onclick="calc()">=</div>
+      </div>
+    </div>
+    <script>
+      output = document.getElementById("display");
+
+      output.value = "";
+
+      function AC() {
+        output.value = "";
+      }
+
+      function DEL() {
+        output.value = output.value.slice(0, -1);
+      }
+
+      function getVal(x) {
+        output.value = output.value + x;
+      }
+
+      function calc() {
+        output.value = eval(output.value);
+      }
+    </script>
+  </body>
+</html>

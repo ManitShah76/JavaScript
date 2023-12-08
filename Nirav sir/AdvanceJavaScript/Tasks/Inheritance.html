@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <Script>
+        class A
+        {
+            RS = 100
+        }
+        class B extends A
+        {
+            RS = 100
+        }
+        class C extends B
+        {
+            RS = 60
+        }
+        class D extends B
+        {
+            RS = 40
+        }
+
+        const p1 = new B;
+        console.log(p1.RS)
+        const p2 = new C;
+        console.log(p2.RS)
+        const p3 = new D;
+        console.log(p3.RS)
+    </Script>
+</body>
+</html>

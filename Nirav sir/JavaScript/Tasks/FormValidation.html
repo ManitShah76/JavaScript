@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #sp{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" name="" id="inp1">
+    <span id="sp"></span> <br><br>
+    <input type="submit" value="Validate" onclick="validate()">
+
+    <script>
+       fname = document.getElementById("inp1")
+        span_tag = document.getElementById("sp")
+
+        function validate() {
+            if(fname.value == "") {
+                span_tag.innerHTML = "This Filed is Required"
+                span_tag.style.color="red"
+            }
+        }
+    </script>
+</body>
+</html>

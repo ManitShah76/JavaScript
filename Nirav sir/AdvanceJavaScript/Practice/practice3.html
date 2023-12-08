@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="b">Get API Data</button>
+
+    <div id="disp"></div>
+
+    <script>
+
+      var btn = document.getElementById("b");
+
+      btn.addEventListener("click",GetAPIData)
+
+      function GetAPIData(){
+          fetch("https://jsonplaceholder.typicode.com/photos")
+          .then((res)=>{
+              return res.json()
+          })
+          .then((data)=>{
+            //   console.log(data)
+              var header = `<h1>API Data</h1><table><tr>
+                <td>Id</td>
+                <td>title</td>
+                <td>url</td>
+                <td>thumbnailUrl</td>
+                </tr>`
+              data.map((v)=>{
+              header = header + `
+
+
+              <td>${v.id}</td>
+              <td>${v.title}</td>
+              <td><img src = ${v.url} height = "100"</td>
+              <td><img src = ${v.thumbnailUrl} height = "100"</td>
+              </tr>
+
+              `
+            })
+
+            document.getElementById("disp").innerHTML = header 
+
+          })
+          .catch((err)=>{
+              console.log(err)
+          })
+      }
+    </script>
+  </body>
+</html>
