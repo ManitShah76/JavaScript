@@ -1,75 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-      img {
-        height: 500px;
-        width: 100%;
-      }
-      /* div {
-        overflow: hidden;
-      }
 
-      .xyz {
-        animation: test 1s;
-      }
-
-       @keyframes test {
-        0% {
-          transform: scale(1) translate(-100%, 0);
+        div 
+        {
+            position: relative;
         }
-        100% {
-          transform: scale(2) translate(0,0);
+        img 
+        {
+            height: 400px;
+            width: 100%;
+            
         }
-      } */
+        button 
+        {
+            position: absolute;
+            top:50%;
+            right:10%;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 12px;
+            background: transparent;
+            box-shadow: 0 0 20px #fff inset;
+            font-size: 25px;
+            font-weight: bold;
+            font-family: cursive;
+            color:#fff;
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
+
     <div>
-      <img src="i1.jpg" alt="" />
-      <img src="i2.jpg" alt="" />
-      <img src="i3.jpg" alt="" />
-      <img src="i4.jpg" alt="" />
+        <img src="i1.jpg" alt="" id="i1">
+        <!-- <img src="i2.jpg" alt="">
+        <img src="i3.jpg" alt="">
+        <img src="i4.jpg" alt=""> -->
+        <button onclick="slider()"> > </button>
     </div>
 
-    <h1>
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur,
-      provident quos similique asperiores magni ducimus illum placeat sunt, a
-      consequuntur impedit excepturi? Eligendi, minima? Architecto minus totam
-      vitae quaerat necessitatibus.\
-    </h1>
+     
+    
+        <h1>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, provident quos similique asperiores magni ducimus illum placeat sunt, a consequuntur impedit excepturi? Eligendi, minima? Architecto minus totam vitae quaerat necessitatibus.\
+        </h1>
 
-    <script>
-      img_arr = document.getElementsByTagName("img");
+        <script>
+            img1 = document.querySelector('#i1');
+            console.log(img1)
+            console.log(img1.src);//http://127.0.0.1:5500/i1.jpg
 
-      // console.log(img_arr);
+           function slider()
+           {
+                if( img1.src.match("i1.jpg"))
+                {
+                    img1.src ="i2.jpg"
+                }
 
-      // img_arr[0].style.display = "none"
-      // img_arr[1].style.display = "none"
-      // img_arr[2].style.display = "none"
-      // img_arr[3].style.display = "none"
-    //   let index = 0;
+                else if(img1.src.match("i2.jpg"))
+                {
+                    img1.src ="i3.jpg"
+                }
 
-      function slider() {
-        for (i = 0; i < img_arr.length; i++) {
-          img_arr[i].style.display = "none";
-        }
+                else if(img1.src.match("i3.jpg"))
+                {
+                    img1.src ="i4.jpg"
+                }
 
-        img_arr[index].style.display = "block";
-        img_arr[index].classList.add("xyz");
+                else 
+                {
+                    img1.src ="i1.jpg"
+                }
 
-        index++; //4
-        if (index == img_arr.length) {
-          index = 0;
-        }
+                // setTimeout("slider()",1000)
+           }
 
-        setTimeout(" slider()", 3000);
-      }
+        //    slider()
 
-      slider();
-    </script>
-  </body>
+
+        </script>
+    
+</body>
 </html>
